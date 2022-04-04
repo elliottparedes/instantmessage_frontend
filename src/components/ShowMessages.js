@@ -1,70 +1,64 @@
-import React, { useEffect,useState } from "react";
+import React, { useEffect,useState, useContext, useCallback} from "react";
 import { useAuth0 } from "@auth0/auth0-react";
-import axios from 'axios';
 
-const ShowMessages = ({conversationId,prevConversationId,token, setMessages,messages,socket,alert}) =>
+import { SocketContext } from "../context/socket";
+
+const ShowMessages = ({conversationId,prevConversationId,token}) =>
 {
     const {user}= useAuth0;
+    const socket= useContext(SocketContext);
 
+    const[messages,setMessages] = useState([]);
     
+   const getMessages= useCallback((id)=> {
+    socket.emit("getMessages",{id:id})
+   })
+
+   const handleEvents =useCallback(()=>{
+        // this makes sure that react doesnt make any more socket listenrers when we udpate
+    socket.on("messages", (data)=>{
+        if(data.messageArray);
+        setMessages(data.messageArray);
+        console.log("received get messages ping");
+    })
+    socket.on("message-received", (data)=>{getMessages(conversationId)})
+   })
+
+  
+
+
    useEffect(()=>{
+    
+    handleEvents();
 
-    // join();
-    // leave();
-    // socket.emit("leave-room",{room:prevConversationId})
-                
-    //             socket.emit("join-room",{room:conversationId})
-   
-    getMessages();
-   },[alert])
+    return ()=>
+     {
+        socket.off("messages")
+        socket.off("message-received")
+    }
+   },[messages])
 
-    useEffect(async ()=>{
-        if(prevConversationId ==="")
-        {
-             
-            // socket.emit("leave-room",{room:prevConversationId})
-        }
-        // socket.emit("join-room",{room:conversationId})
-       
-        getMessages();
-                       
-       socket.emit("leave-room",{room:prevConversationId})         
-      socket.emit("join-room",{room:conversationId})  
-       
+    useEffect( ()=>{
+    
+                 
+    socket.emit("leave-room",{room:prevConversationId})         
+    socket.emit("join-room",{room:conversationId})  
+      getMessages(conversationId);   
 
     },[conversationId])
 
-//     socket.on('message-received', (message1)=>
-//   {
-//     // setMessages(messages.concat(message.message));
-//     setMessages(messages.concat(message1.body))
-//     console.log("we need to update the dom with the new message now")
-//   })
-    const getMessages =async () =>
-    {
-        if(conversationId !=="")
-        try{
-            await axios.post("http://localhost:3000/getMessages",{
-                id:conversationId
-            }, {
-                headers: {
-                    'Authorization': `Bearer ${token}`
-                }
-                             }      
-                             ).then((res)=> {
-                                 console.log(res.data);
-                                 setMessages(res.data);
-                                
-                             }) 
-                   }catch(err) {
-                       console.log(err);
-                   }
 
-    }
+    // const getMessages = (id) =>
+    // {
+    //     socket.emit("getMessages",{id:id})
+  
+
+    // }
 
     return(
     <div className="imessage" style={{overflowY:"auto", display:"flex"}}>
       {messages.map((message)=>{
+          console.log("message has this" + message)
          return <p className={message.sender===user?"from-me":"from-them"} key={message.body}>{message.body}</p>
       })}
        

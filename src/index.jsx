@@ -19,7 +19,8 @@ ReactDOM.render(
         domain="dev-gy1a3e07.us.auth0.com"
         clientId="x6QAJZOtPH6UR4X3kR9hJ3Ge3XkANdde"
         redirectUri={window.location.origin}
-        SameSite="secure"
+        
+
   >
     
       <Routes>

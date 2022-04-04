@@ -1,12 +1,12 @@
 import React, { useEffect,useState } from "react";
 import { useAuth0, withAuthenticationRequired } from "@auth0/auth0-react";
-import axios from 'axios';
+
 import LogoutButton from "../components/LogoutButton";
 import "../Main.css"
 import Spinner from "../components/Spinner";
 
 const Profile = () => {
-  const { user, isAuthenticated, isLoading, getAccessTokenSilently, withAuthenticationRequired } = useAuth0();
+  const { user, isAuthenticated, isLoading, getAccessTokenSilently } = useAuth0();
   const [token,setToken] = useState(0)
   
 
@@ -36,16 +36,7 @@ const Profile = () => {
   }
 
 
-const sendMessage = async() =>
-{
-  console.log("Request was sent with this value of token: "+ token)
 
-    const res = await axios.post("http://localhost:3000/sendMessage", {message:"helllo from react secured"},{
-      headers:{
-        Authorization: `Bearer ${token}`
-      }
-    }).then(console.log(res))
-}
 
   return (
     isAuthenticated && (
