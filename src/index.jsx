@@ -21,6 +21,7 @@ ReactDOM.render(
         redirectUri="https://joyful-queijadas-e7e56b.netlify.app/"
         prompt="consent"
         audience='https://instantmessengerbackend.herokuapp.com/'
+        scope='openid profile email'
         
 
   >
