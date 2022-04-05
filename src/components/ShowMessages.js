@@ -5,7 +5,7 @@ import { SocketContext } from "../context/socket";
 
 const ShowMessages = ({conversationId,prevConversationId}) =>
 {
-    const {user}= useAuth0;
+    const {user}= useAuth0();
     const socket= useContext(SocketContext);
 
     const[messages,setMessages] = useState([]);
@@ -59,8 +59,8 @@ const ShowMessages = ({conversationId,prevConversationId}) =>
     <div className="imessage" style={{overflowY:"auto", display:"flex"}}>
       {messages.map((message)=>{
           console.log("message has this" + message)
-          console.log(user)
-         return <p className={message.sender === user ?"from-me":"from-them"} key={message.body}>{message.body}</p>
+          
+         return <p className={message.sender === user.nickname?"from-me":"from-them"} key={message.body}>{message.body}</p>
       })}
        
     </div>)
