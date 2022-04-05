@@ -59,7 +59,7 @@ const ShowMessages = ({conversationId,prevConversationId,token}) =>
     <div className="imessage" style={{overflowY:"auto", display:"flex"}}>
       {messages.map((message)=>{
           console.log("message has this" + message)
-         return <p className={message.sender===user?"from-me":"from-them"} key={message.body}>{message.body}</p>
+         return <p className={message.sender===user.nickname?"from-me":"from-them"} key={message.body}>{message.body}</p>
       })}
        
     </div>)
