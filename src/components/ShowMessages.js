@@ -60,7 +60,7 @@ const ShowMessages = ({conversationId,prevConversationId}) =>
       {messages.map((message)=>{
           console.log("message has this" + message)
           console.log(user)
-         return <p className={message.sender === user.nickname ?"from-me":"from-them"} key={message.body}>{message.body}</p>
+         return <p className={message.sender === user ?"from-me":"from-them"} key={message.body}>{message.body}</p>
       })}
        
     </div>)
