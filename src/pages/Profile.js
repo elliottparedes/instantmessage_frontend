@@ -1,5 +1,5 @@
 import React, { useEffect,useState } from "react";
-import { useAuth0, withAuthenticationRequired } from "@auth0/auth0-react";
+import { useAuth0 } from "@auth0/auth0-react";
 
 import LogoutButton from "../components/LogoutButton";
 import "../Main.css"
@@ -51,7 +51,5 @@ const Profile = () => {
   );
 };
 
-export default withAuthenticationRequired (Profile, {
-  onRedirecting: () => <Spinner />,
-});
+export default Profile;
 
