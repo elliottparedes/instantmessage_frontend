@@ -20,6 +20,7 @@ ReactDOM.render(
         clientId="x6QAJZOtPH6UR4X3kR9hJ3Ge3XkANdde"
         redirectUri="https://joyful-queijadas-e7e56b.netlify.app/"
         prompt="consent"
+        audience='https://instantmessengerbackend.herokuapp.com/'
         
 
   >
