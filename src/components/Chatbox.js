@@ -70,7 +70,7 @@ const Chatbox = () =>
    
     const getToken = async () => 
     {
-        const domain = "dev-gy1a3e07.us.auth0.com";
+       
         try {
           const accessToken = await getAccessTokenSilently({
             audience: `https://instantmessengerbackend.herokuapp.com/`,
