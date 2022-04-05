@@ -3,7 +3,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 
 import { SocketContext } from "../context/socket";
 
-const ShowMessages = ({conversationId,prevConversationId,token}) =>
+const ShowMessages = ({conversationId,prevConversationId}) =>
 {
     const {user}= useAuth0;
     const socket= useContext(SocketContext);
@@ -59,7 +59,8 @@ const ShowMessages = ({conversationId,prevConversationId,token}) =>
     <div className="imessage" style={{overflowY:"auto", display:"flex"}}>
       {messages.map((message)=>{
           console.log("message has this" + message)
-         return <p className={message.sender===user.nickname?"from-me":"from-them"} key={message.body}>{message.body}</p>
+          console.log(user)
+         return <p className={message.sender === user.nickname ?"from-me":"from-them"} key={message.body}>{message.body}</p>
       })}
        
     </div>)
