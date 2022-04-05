@@ -10,7 +10,7 @@ import {socket,SocketContext} from './context/socket';
 
 function App() {
 
-   const { loginWithPopup,  isAuthenticated, isLoading } = useAuth0();
+   const { loginWithRedirect,  isAuthenticated, isLoading } = useAuth0();
 
  
   if (isLoading) {
@@ -27,7 +27,7 @@ function App() {
     );
   }
   else {
-    loginWithPopup();
+    loginWithRedirect();
 
   }
 
