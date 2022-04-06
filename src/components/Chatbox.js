@@ -139,7 +139,7 @@ const Chatbox = () =>
                     </div>
 
                 </div>
-                <div className="row w-100" style={{height:"3rem", backgroundColor:"aqua"}}>
+                <div className="row w-100" style={{height:"3rem", backgroundColor:"white"}}>
                     <div className="col p-0">
                         <form className="w-100" onSubmit={(event)=>sendMessage(event) }>
                             <div className="input-group mb-3 w-100">
