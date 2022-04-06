@@ -115,7 +115,7 @@ const Chatbox = () =>
                   </div>
                 </div>
                 <div className="row" style={{height:"20rem"}}>
-                  <div className="col scroll border border-3" style={{height:"100%"}}>
+                  <div className="col scroll border" style={{height:"100%"}}>
                     <ShowConversations currentContact={currentContact} deleteVisible={deleteVisible} setCurrentContact={setCurrentContact} token={token} setConversationId={setConversationId} conversationId={conversationId}/>
                   </div>
                 </div>
