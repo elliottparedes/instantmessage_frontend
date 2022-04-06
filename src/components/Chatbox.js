@@ -114,8 +114,8 @@ const Chatbox = () =>
                     <li> <Compose token={token}  /></li>
                   </div>
                 </div>
-                <div className="row" style={{height:"20rem"}}>
-                  <div className="col scroll" style={{height:"100%"}}>
+                <div className="row border border-3" style={{height:"20rem"}}>
+                  <div className="col scroll border border-3" style={{height:"100%"}}>
                     <ShowConversations currentContact={currentContact} deleteVisible={deleteVisible} setCurrentContact={setCurrentContact} token={token} setConversationId={setConversationId} conversationId={conversationId}/>
                   </div>
                 </div>
