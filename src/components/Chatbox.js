@@ -126,7 +126,7 @@ const Chatbox = () =>
                 </div>
               </div> 
               <div className="col-sm-8">
-                <div className="row w-100" style={{backgroundColor:"#ea5323", height:"3rem"}}>
+                <div className="row w-100" style={{backgroundColor:"#72BBFF", height:"3rem"}}>
                     <div className="col text-center">
                         <h5 className="mt-3">{currentContact}</h5>
                     </div>
