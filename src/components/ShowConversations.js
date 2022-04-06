@@ -91,7 +91,7 @@ const ShowConversations = ({deleteVisible, currentContact, setCurrentContact,tok
         {conversations.map((convo) => {
            return (
 
-           <div className="btn w-100 shadow-2" onClick={() => {handleConversationChange(convo)} } key={convo.participants.toString()} style={{marginTop:"2rem", background:"grey"}}>
+           <div className="btn w-100 shadow-2" onClick={() => {handleConversationChange(convo)} } key={convo.participants.toString()} style={{marginTop:"2rem", background:"#ECECEC"}}>
                 {
                     <h5>{filterArray(convo.participants)}<i onClick={()=>handleDelete(convo._id)} className="btn btn-danger bi bi-trash" style={{float:"right", visibility: deleteVisible?"":"hidden"}}></i></h5> 
                 }
