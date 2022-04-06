@@ -101,7 +101,7 @@ const Chatbox = () =>
   
       return(
     
-    <div className="conatiner-fluid" style={{backgroundColor: "#d3d7cf", height:"100vh"}}>
+    <div className="conatiner-fluid" style={{backgroundColor: "white", height:"100vh"}}>
           <div className="card center p-0 m-0 border-none" style={{backgroundColor:"white", width:"800px"}}>
             <div className="row">
               <div className="col-sm-4" style={{backgroundColor:"white"}}>
