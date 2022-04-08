@@ -16,7 +16,7 @@
     text-align: center;
     justify-content: center;
     align-items:center;
-    
+    min-width: 200px;
   }
   
   .nav li {
