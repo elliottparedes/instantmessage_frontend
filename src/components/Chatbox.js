@@ -134,7 +134,7 @@ const Chatbox = () =>
                     </div>
                 </div>
                 <div className="row w-100" style={{height:"17rem", backgroundColor:"white"}}>
-                    <div className="col scroll" style={{height:"100%",minWidth:"200px"}}>    
+                    <div className="col scroll" style={{height:"100%",width:"100%"}}>    
                         
                          {/* <button className="btn btn-primary" onClick={()=> socket.emit("getConversations",{user:user.nickname})}>submit</button> */}
                           <ShowMessages conversationId={conversationId}/>
