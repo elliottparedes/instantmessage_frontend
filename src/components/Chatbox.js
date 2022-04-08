@@ -104,7 +104,7 @@ const Chatbox = () =>
       return(
     
     <div className="conatiner" style={{backgroundColor: "white", height:"100vh"}}>
-          <div className="card center p-0 m-0 border-none" style={{backgroundColor:"white", width:"800px"}}>
+          <div className="card center p-0 m-0 border-none" style={{backgroundColor:"white"}}>    {/* chagned width from 800px*/}
             <div className="row flex-nowrap">
               <div className="col-lg-4" style={{backgroundColor:"white"}}>
                 <div className="row border-1" style={{height:"3rem"}}>
