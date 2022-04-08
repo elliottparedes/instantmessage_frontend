@@ -24,7 +24,7 @@ const Chatbox = () =>
     
     const[redirectToProfile,setRedirectToProfile] = useState(false);
    
-    const [currentContact, setCurrentContact] = useState("No Conversation Selected");
+    const [currentContact, setCurrentContact] = useState("No Convo Selected");
     const [conversationId, setConversationId] = useState("");
     const [deleteVisible,setDeleteVisible] = useState(false);
   

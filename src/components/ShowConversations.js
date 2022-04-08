@@ -55,7 +55,7 @@ const ShowConversations = ({deleteVisible, currentContact, setCurrentContact,tok
         console.log("going to delete this conversation with id:" + id)
         socket.emit("delete-conversation",{data:id});
 
-        setCurrentContact("No conversation selected");
+        setCurrentContact("No Convo Selected");
         
     }
 
