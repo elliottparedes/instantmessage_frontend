@@ -37,6 +37,7 @@ const Chatbox = () =>
 
     
           socket.on('room-joined',(message)=>{console.log(message)});
+          socket.on('clearname', ()=>{setCurrentContact("No Contact Selected")})
           // socket.on('refresh-conversations', ()=>{
           // console.log("the refersh conversatoin event came in")
         
@@ -44,6 +45,7 @@ const Chatbox = () =>
         // socket.off("refresh-conversations")
         socket.off('room-joined')
         socket.off("conversations")
+        socket.off("clearname") 
       } 
         
       },[])    
