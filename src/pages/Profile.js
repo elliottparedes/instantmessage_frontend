@@ -40,7 +40,7 @@ const Profile = () => {
 
   return (
     isAuthenticated && (
-      <div className="card center" style={{}}>
+      <div className="card center" style={{maxWidth:"500px;"}}>
         <img src={user.picture} alt={user.name} />
         <h2>{user.name}</h2>
         <p>{user.email}</p>

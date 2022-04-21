@@ -4,8 +4,6 @@ import Spinner from './components/Spinner';
 import React from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 import Chatbox from './components/Chatbox';
-//  import { io } from "socket.io-client";
-//  const socket = io("http://localhost:3000/", {withCredentials: false});
 import {socket,SocketContext} from './context/socket';
 
 function App() {
