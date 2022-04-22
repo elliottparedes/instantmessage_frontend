@@ -13,6 +13,9 @@ const Compose = ( {token}) => {
     const sendEmit = useCallback((participants)=>{
         socket.emit("notify-participants",{participants: participants});
     })
+    const createConversation = useCallback((participants) =>{
+        socket.emit("create-conversation",{participants:participants});
+    })
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => 
@@ -20,41 +23,12 @@ const Compose = ( {token}) => {
         setShow(true);
     }
 
-//    useEffect(()=>{
-
-//    },[])
-
-    //   useEffect(()=>{
-
-        
-    //     console.log(participants);
-    //     if(participants.length>1)
-    //     startConversation();
-            
-    //     },[participants])
-
-
-    // const handleAddingParticipant = (event) =>
-    // {
-    //     event.preventDefault();
-    //     setParticipants([...participants,event.target.recipient.value]);
-
-    // }
 
     const startConversation = async (participants) =>
     {
-        try {
-              
-              
-               
-                
-                 await axios.post("https://instantmessengerbackend.herokuapp.com/createConversation",{
-                    participants: participants
-                }, {
-                    headers: {
-                        'Authorization': `Bearer ${token}`
-                    }
-                }).then((res)=> {
+        try {   
+                 await createConversation(participants)
+                .then((res)=> {
                     console.log(res.data);
                     sendEmit(participants);
                     
