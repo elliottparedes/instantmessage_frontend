@@ -2,7 +2,6 @@ import React, { useState, useContext, useCallback } from "react";
 
 import Modal from 'react-bootstrap/Modal'
 import { useAuth0 } from "@auth0/auth0-react";
-import axios from 'axios';
 
 import { SocketContext } from "../context/socket";
 
