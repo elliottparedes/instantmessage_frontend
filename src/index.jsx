@@ -13,6 +13,8 @@ import {
 
 
 ReactDOM.render(
+
+  //redirectUri="https://joyful-queijadas-e7e56b.netlify.app/"
  
  <BrowserRouter>
   <Auth0Provider

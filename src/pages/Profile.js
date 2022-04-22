@@ -2,7 +2,7 @@ import React, { useEffect,useState } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 
 import LogoutButton from "../components/LogoutButton";
-import "../Main.css"
+import "./profile.css"
 import Spinner from "../components/Spinner";
 
 const Profile = () => {
@@ -40,16 +40,20 @@ const Profile = () => {
 
   return (
     isAuthenticated && (
-      <div className="card center" style={{maxWidth:"500px;"}}>
+      <div className="container">
+              <div className="card center" style={{maxWidth:"500px"}}>
         <img src={user.picture} alt={user.name} />
         <h2>{user.name}</h2>
         <p>{user.email}</p>
         {/* <button onClick={sendMessage}> send meee</button> */}
         <LogoutButton/>
+        
       </div>
-    )
-  );
-};
+      </div>
+
+    
+  ) )
+}
 
 export default Profile;
 

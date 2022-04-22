@@ -104,9 +104,9 @@ const Chatbox = () =>
       return(
     
     <div className="conatiner" style={{backgroundColor: "white", height:"100vh"}}>
-          <div className="card center p-0 m-0 border-none" style={{backgroundColor:"white"}}>    {/* chagned width from 800px*/}
+          <div className="card center p-0 m-0 border-none" style={{backgroundColor:"white",width:"500px", maxWidth:"500px"}}>    {/* chagned width from 800px*/}
             <div className="row gx-0 w-100 flex-nowrap">
-              <div className="col border-end-4" style={{backgroundColor:"#f0ead6"}}>
+              <div className="col border-end-4">
                 <div className="row border-1" style={{height:"3rem"}}>
                   <div className="col nav">
                     <li onClick={()=>setRedirectToProfile(true)}><i className="btn bi bi-file-earmark-person"></i></li>
@@ -127,14 +127,14 @@ const Chatbox = () =>
       
                 </div>
               </div> 
-              <div className="col" style={{minWidth:"200px;"}}>
+              <div className="col" style={{minWidth:"200px"}}>
                 <div className="row w-100" style={{backgroundColor:"#72BBFF", height:"3rem"}}>
                     <div className="col text-center">
                         <h5 className="mt-3">{currentContact}</h5>
                     </div>
                 </div>
                 <div className="row w-100" style={{height:"17rem", backgroundColor:"white"}}>
-                    <div className="col scroll" style={{height:"100%",width:"100%"}}>    
+                    <div className="col border scroll" style={{height:"100%",width:"100%"}}>    
                         
                          {/* <button className="btn btn-primary" onClick={()=> socket.emit("getConversations",{user:user.nickname})}>submit</button> */}
                           <ShowMessages conversationId={conversationId}/>
