@@ -14,6 +14,7 @@ const Compose = ( {token}) => {
         socket.emit("notify-participants",{participants: participants});
     })
     const createConversation = useCallback((participants) =>{
+        console.log("create conversation was called from frontend");
         socket.emit("create-conversation",{participants:participants});
     })
     const [show, setShow] = useState(false);
